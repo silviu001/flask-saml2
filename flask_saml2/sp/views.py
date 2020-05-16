@@ -71,9 +71,10 @@ class SingleLogout(SAML2View):
         # user back to the IdP for further sign outs...
         return self.do_logout()
 
-    def do_logout(self, handler):
+    def do_logout(self):
         self.sp.logout()
         ...  # TODO
+        return 'OK'
 
 
 class AssertionConsumer(SAML2View):
